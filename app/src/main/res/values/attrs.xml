@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PointIndicator">
+        <attr name="pointCount" format="integer"/>
+        <attr name="pointSolid" format="color"/>
+        <attr name="pointSelectedSolid" format="color"/>
+        <attr name="pointRedius" format="dimension"/>
+    </declare-styleable>
+
+</resources>
