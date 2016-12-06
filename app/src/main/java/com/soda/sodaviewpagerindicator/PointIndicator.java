@@ -14,11 +14,16 @@ import android.widget.LinearLayout;
 
 public class PointIndicator extends LinearLayout {
 
+
     /**
      * 点数
      */
     private int mPointCount;
 
+    public void setPointCount(int pointCount) {
+        mPointCount = pointCount;
+        init();
+    }
 
     public PointIndicator(Context context) {
         this(context, null , 0);
@@ -37,9 +42,11 @@ public class PointIndicator extends LinearLayout {
     }
 
     private void init() {
+        removeAllViews();
         for (int i = 0 ; i < mPointCount; i ++) {
             addView(new PureCircleView(getContext()));
         }
+        setSelectedIndex(0);
     }
 
     public void  setSelectedIndex(int index){

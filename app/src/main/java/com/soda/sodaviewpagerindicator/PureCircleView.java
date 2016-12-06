@@ -13,6 +13,8 @@ import android.view.View;
 
 public class PureCircleView extends View {
 
+    private int mRadius = 5;
+    private int mIndex;
 
     //默认颜色为红色
     int mColor = Color.RED;
@@ -57,11 +59,11 @@ public class PureCircleView extends View {
         int heightSize = MeasureSpec.getSize(heightMeasureSpec);
         if (widthMode == MeasureSpec.AT_MOST && heightMode == MeasureSpec.AT_MOST) {
             //宽高都为wrap_content, 默认宽高为50
-            setMeasuredDimension(50, 50);
+            setMeasuredDimension(40, 20);
         } else if (widthMode == MeasureSpec.AT_MOST) {
-            setMeasuredDimension(50, heightSize);
+            setMeasuredDimension(40, heightSize);
         } else if (heightMode == MeasureSpec.AT_MOST) {
-            setMeasuredDimension(widthSize, 50);
+            setMeasuredDimension(widthSize, 20);
         }
     }
 
@@ -108,49 +110,5 @@ public class PureCircleView extends View {
     public void setUnSelectedColorColor(int color) {
         mUnSelectedColor = color;
     }
-
-    /*private int mRadius = 5;
-    private int mSelectedColor;
-    private int mUnSelectedColor;
-    private int mColor;
-
-    public PureCircleView(Context context) {
-        this(context, null, 0);
-    }
-
-    public PureCircleView(Context context, AttributeSet attrs) {
-        this(context, attrs, 0);
-    }
-
-    public PureCircleView(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-        //TODO XML获取属性
-        mColor = Color.RED;
-    }
-
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        mRadius = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, mRadius, new DisplayMetrics());
-        Paint paint = new Paint();
-        paint.setColor(mColor);
-        canvas.drawCircle(getWidth()/2, getHeight()/2, mRadius, paint);
-    }
-
-    @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        setMeasuredDimension(50, 50);
-    }
-
-    public int getRadius() {
-        return mRadius;
-    }
-
-    public void setRadius(int radius) {
-        mRadius = radius;
-    }
-
-*/
 
 }
